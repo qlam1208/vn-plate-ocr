@@ -19,9 +19,14 @@ Hàm ánh xạ $\mathcal{B}$ sẽ tự động gộp các ký tự giống nhau 
 Ví dụ: $\mathcal{B}(\text{--22-99-C-11-}) = \text{29C1}$.
 **Công thức CTC Loss:**
 Mục tiêu của mô hình là cực đại hóa xác suất sinh ra chuỗi nhãn $S$ đúng từ đầu vào $X$. Xác suất của $S$ là tổng xác suất của mọi đường dẫn (paths) $\pi$ có thể ánh xạ ra $S$:
-\[ p(S | X) = \sum_{\pi \in \mathcal{B}^{-1}(S)} p(\pi | X) \]
+$$
+p(S | X) = \sum_{\pi \in \mathcal{B}^{-1}(S)} p(\pi | X)
+$$
 Trong đó $p(\pi | X) = \prod_{t=1}^T y_{\pi_t}^t$ là xác suất của một đường dẫn cụ thể. Hàm mất mát (Loss) cần tối thiểu hóa được định nghĩa là âm logarit:
-\[ \mathcal{L}_{CTC} = -\log p(S | X) \]
+$$
+\mathcal{L}_{CTC} = -\log p(S | X)
+$$
+
 ## Tính Năng Nổi Bật
 - Kiến trúc CRNN: Kết hợp CNN và Bi-LSTM chuẩn mực.
 - Data Augmentation Mạnh Mẽ: Mô phỏng lại các điều kiện khắc nghiệt ngoài thực tế của camera hành trình (ảnh nhòe, xoay nghiêng, lóa sáng...) giúp tăng độ ổn định cho mô hình.
