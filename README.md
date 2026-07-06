@@ -9,7 +9,9 @@ Quá trình biến một bức ảnh biển số thành chuỗi ký tự đượ
 Mạng CNN quét qua bức ảnh đầu vào $I$ để bóc tách các đặc trưng không gian. Đầu ra của CNN là một chuỗi các dải đặc trưng (feature maps) $X = (x_1, x_2, ..., x_T)$, trong đó $T$ là chiều dài của chuỗi (số cột đặc trưng).
 ### 2. Mô hình hóa chuỗi (Bi-LSTM - RNN Hai Chiều)
 Chuỗi $X$ được đưa vào mạng Bi-LSTM. Khác với CNN chỉ nhìn cục bộ, Bi-LSTM quét chuỗi theo 2 chiều (từ trái qua phải và ngược lại) để nắm bắt ngữ cảnh. Tại mỗi bước $t$, trạng thái ẩn $h_t$ được tính bằng cách ghép trạng thái của cả 2 chiều:
-\[ h_t = [\overrightarrow{h_t}, \overleftarrow{h_t}] \]
+$$
+h_t = [\overrightarrow{h_t}, \overleftarrow{h_t}]
+$$
 Đầu ra của phân lớp này là một ma trận xác suất $Y = (y_1, y_2, ..., y_T)$, trong đó $y_t$ chứa phân bố xác suất của toàn bộ tập ký tự (cộng thêm ký tự `Blank`) tại cột $t$.
 ### 3. Căn chỉnh và Giải mã (CTC Loss - Connectionist Temporal Classification)
 Vấn đề lớn nhất của OCR là độ rộng của mỗi chữ cái không giống nhau. Hàm CTC giải quyết bài toán này bằng cách giới thiệu ký tự khoảng trắng (Blank), ký hiệu là `-`.
