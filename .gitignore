@@ -1,0 +1,30 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+# Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+# IDE (PyCharm, VSCode)
+.idea/
+.vscode/
+
+# 1. Dataset (Rất nặng và nhiều file ảnh con, KHÔNG ĐƯỢC push)
+yolo_plate_ocr_dataset/
+*.zip
+# 2. File trọng số (Model Checkpoints)
+# Bỏ qua hàng chục file sinh ra lúc train (mỗi file 35MB x 60 file = >2GB)
+crnn_epoch_*.pth
+# (Tùy chọn) Bỏ qua luôn cả file best_crnn.pth nếu bạn thấy nó nặng (35MB).
+# Nếu bạn VẪN MUỐN lưu file best_crnn.pth lên Git làm kỷ niệm thì CỨ ĐỂ YÊN.
+# Còn nếu KHÔNG MUỐN lưu file best_crnn.pth thì bỏ dấu # ở dòng dưới đi:
+# *.pth
+# 3. Thư mục chứa ảnh lỗi lưu tạm (Tránh làm rác Git)
+v1_fail/
+v2_fail_1%/
+debug_crops/
+# 4. File đánh giá (Nếu bạn muốn commit biểu đồ lên để khoe thì xóa 2 dòng dưới đi)
+evaluation_chart.png
+evaluation_results.csv
