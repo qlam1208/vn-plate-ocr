@@ -98,6 +98,3 @@ PLATE_REGEX = r'^(\d{2}[A-Z][A-Z0-9]?\d{4,5}|\d{2}MD\d{5,6}|\d{2}(LD|NN|NG|KT|CD
 Sau khi áp dụng Data Augmentation, mô hình đạt được kết quả cực kỳ ấn tượng trên tập dữ liệu camera hành trình thực tế nhiều nhiễu:
 - Độ chính xác tuyệt đối (Plate Accuracy): ~95.83% (95.83% biển số được đọc đúng 100% không trật ký tự nào)
 - Tỉ lệ lỗi ký tự (CER): ~1.14%
-
-## Đóng Góp
-Nếu bạn thấy project này hữu ích cho công việc hoặc đồ án của mình, đừng quên để lại một star cho repo nhé! Mọi đóng góp (Pull Request) hay báo lỗi (Issues) đều được chào đón.
