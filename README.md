@@ -18,6 +18,7 @@ vn-plate-ocr/
 ├── eval.py             # Code đánh giá (Tính Acc, CER, vẽ biểu đồ csv)
 ├── best_crnn.pth       # File trọng số tốt nhất (Sinh ra sau khi chạy eval.py)
 └── yolo_plate_ocr_dataset/ # Dataset chứa ảnh ký tự và file txt chuẩn YOLO
+
 ## Dữ Liệu (Dataset)
 Mô hình được huấn luyện trên bộ dataset ký tự biển số xe tự custom.
 - Định dạng: Chuẩn YOLO annotation (`<class> <x_center> <y_center> <width> <height>`).
